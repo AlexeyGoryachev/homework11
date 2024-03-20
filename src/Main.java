@@ -10,6 +10,9 @@ public class Main {
         int os = 0;
         int clientDeviceYear = 2010;
         selectingVersion(os, clientDeviceYear);
+        System.out.println("Task 3.");
+        int deliveryDistance = 55;
+        calculationDeliveryTime(deliveryDistance);
     }
     public static void checkYear(int year) {
         if ((year % 100 != 0 && year % 4 == 0) || (year % 400 == 0)) {
@@ -32,6 +35,18 @@ public class Main {
             } else {
                 System.out.println("установите облегченную версию приложения для Android по ссылке");
             }
+        }
+    }
+    public static void calculationDeliveryTime(int deliveryDistance) {
+        int minDeliveryTime = 1;
+        if (deliveryDistance <= 100 && deliveryDistance <= 20) {
+            System.out.println("Доставка будет произведена в течении " + minDeliveryTime + " суток.");
+        } else if (deliveryDistance <= 100 && deliveryDistance > 20 && deliveryDistance <= 60) {
+            System.out.println("Доставка будет произведена в течении " + minDeliveryTime * 2 + " суток.");
+        } else if (deliveryDistance <= 100 && deliveryDistance > 60) {
+            System.out.println("Доставка будет произведена в течении " + minDeliveryTime * 3 + " суток.");
+        } else {
+            System.out.println("Доставка по указанному адресу не осуществляется.");
         }
     }
 }
