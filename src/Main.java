@@ -32,5 +32,4 @@ public class Main {
             System.out.println("установите версию приложения для Android по ссылке");
         }
     }
-
 }
