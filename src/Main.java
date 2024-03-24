@@ -8,11 +8,8 @@ public class Main {
         int iOS = 0;
         int android = 1;
         int os = 0;
-        int clientDeviceYear = 2010;
+        int clientDeviceYear = 2024;
         selectingVersion(os, clientDeviceYear);
-        System.out.println("Task 3.");
-        int deliveryDistance = 55;
-        calculationDeliveryTime(deliveryDistance);
     }
     public static void checkYear(int year) {
         if ((year % 100 != 0 && year % 4 == 0) || (year % 400 == 0)) {
@@ -22,31 +19,18 @@ public class Main {
         }
     }
     public static void selectingVersion(int os, int clientDeviceYear) {
-        if (os == 0) {
-            if (clientDeviceYear >= 2015) {
-                System.out.println("установите версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("установите облегченную версию приложения для iOS по ссылке");
-            }
+        if (os != 0 && os != 1) {
+            System.out.println("Неизвестная система");
         }
-        if (os == 1) {
-            if (clientDeviceYear >= 2015) {
-                System.out.println("установите версию приложения для Android по ссылке");
-            } else {
-                System.out.println("установите облегченную версию приложения для Android по ссылке");
-            }
+        if (os == 0 && clientDeviceYear <= 2015) {
+            System.out.println("установите облегченную версию приложения для IOS по ссылке");
+        } else if (os == 0 && clientDeviceYear > 2015) {
+            System.out.println("установите версию приложения для IOS по ссылке");
+        } else if (os == 1 && os <= 2015) {
+            System.out.println("установите облегченную версию приложения для Android по ссылке");
+        } else if (os == 1 && clientDeviceYear > 2015) {
+            System.out.println("установите версию приложения для Android по ссылке");
         }
     }
-    public static void calculationDeliveryTime(int deliveryDistance) {
-        int minDeliveryTime = 1;
-        if (deliveryDistance <= 100 && deliveryDistance <= 20) {
-            System.out.println("Доставка будет произведена в течении " + minDeliveryTime + " суток.");
-        } else if (deliveryDistance <= 100 && deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Доставка будет произведена в течении " + minDeliveryTime * 2 + " суток.");
-        } else if (deliveryDistance <= 100 && deliveryDistance > 60) {
-            System.out.println("Доставка будет произведена в течении " + minDeliveryTime * 3 + " суток.");
-        } else {
-            System.out.println("Доставка по указанному адресу не осуществляется.");
-        }
-    }
+
 }
